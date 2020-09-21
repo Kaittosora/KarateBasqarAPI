@@ -33,12 +33,12 @@ Feature: Notification API test
     When method POST
     Then status 400
 
-#  #edit a notification
-#    Given path '/school-service/api/notifications'
-#    And header Authorization = tokenType + ' ' + accessToken
-#    And request { "id" : "{{myId}}", "name" : "YourSchool", "type" :"STUDENT_PAYMENT_TIME", "description" : "elementary", "schoolId" : "5c5aa8551ad17423a4f6ef1d" }
-#    When method PUT
-#    Then status 200
+  #edit a notification
+    Given path '/school-service/api/notifications'
+    And header Authorization = tokenType + ' ' + accessToken
+    And request { "id" : '#(myId)', "name" : "YourSchool", "type" :"STUDENT_PAYMENT_TIME", "description" : "elementary", "schoolId" : "5c5aa8551ad17423a4f6ef1d" }
+    When method PUT
+    Then status 200
 
   #delete a notification
     Given path 'school-service/api/notifications/', myId
